@@ -1,13 +1,8 @@
 import { Router } from "express";
+import { heatlthCheck } from "../controller/health.controller";
 
 const router = Router();
 
-router.get("/", (_req, res) => {
-  res.json({
-    status: "ok",
-    service: "@repo/server",
-    timestamp: new Date().toISOString(),
-  });
-});
+router.get("/", heatlthCheck);
 
 export default router;
