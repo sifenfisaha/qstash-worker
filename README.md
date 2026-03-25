@@ -36,22 +36,15 @@ QSTASH_CURRENT_SIGNING_KEY=...
 QSTASH_NEXT_SIGNING_KEY=...
 ```
 
-Create `apps/client/.env.local`:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:4000
-```
-
 `BASE_URL` must be publicly reachable so QStash can call your endpoint. For local development, use a tunnel (for example ngrok or Cloudflare Tunnel).
 
 ### 2) Install and run
 
 ```bash
 pnpm install
-pnpm dev
+pnpm dev:server
 ```
 
-- Client runs at `http://localhost:3000`
 - Server runs at `http://localhost:4000`
 
 ## Using QStash in this app
@@ -73,4 +66,3 @@ Expected behavior:
 - `GET /api/health` - service health check
 - `POST /api/schedule` - publish immediate + delayed QStash jobs
 - `POST /api/send-email` - QStash callback target with signature verification
-

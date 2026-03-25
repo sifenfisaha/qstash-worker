@@ -1,19 +1,14 @@
 {
-  "name": "next-express-monorepo",
+  "name": "qstash-worker-server",
   "private": true,
   "version": "1.0.0",
   "packageManager": "pnpm@10.29.3",
   "scripts": {
-    "dev": "concurrently -n client,server -c cyan,green \"pnpm --filter @repo/client dev\" \"pnpm --filter @repo/server dev\"",
-    "dev:client": "pnpm --filter @repo/client dev",
+    "dev": "pnpm --filter @repo/server dev",
     "dev:server": "pnpm --filter @repo/server dev",
-    "build": "pnpm --filter @repo/client build && pnpm --filter @repo/server build",
-    "typecheck": "pnpm --filter @repo/client typecheck && pnpm --filter @repo/server typecheck",
-    "start": "concurrently -n client,server -c cyan,green \"pnpm --filter @repo/client start\" \"pnpm --filter @repo/server start\"",
-    "start:client": "pnpm --filter @repo/client start",
+    "build": "pnpm --filter @repo/server build",
+    "typecheck": "pnpm --filter @repo/server typecheck",
+    "start": "pnpm --filter @repo/server start",
     "start:server": "pnpm --filter @repo/server start"
-  },
-  "devDependencies": {
-    "concurrently": "^9.2.0"
   }
 }
