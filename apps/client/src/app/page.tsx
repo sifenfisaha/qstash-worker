@@ -13,7 +13,7 @@ type HealthResponse = {
 async function getServerData() {
   const [helloResponse, healthResponse] = await Promise.all([
     fetch(`${apiBaseUrl}/api/hello`, { cache: "no-store" }),
-    fetch(`${apiBaseUrl}/api/health`, { cache: "no-store" })
+    fetch(`${apiBaseUrl}/v1/api/health`, { cache: "no-store" })
   ]);
 
   if (!helloResponse.ok || !healthResponse.ok) {
