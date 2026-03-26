@@ -66,3 +66,25 @@ Expected behavior:
 - `GET /api/health` - service health check
 - `POST /api/schedule` - publish immediate + delayed QStash jobs
 - `POST /api/send-email` - QStash callback target with signature verification
+- `POST /api/recurring-health` - create recurring QStash health check (every 10 min)
+- `DELETE /api/recurring-health/:scheduleId` - delete recurring QStash health check
+
+## Recurring server-live check
+
+Call this once to create a recurring QStash schedule:
+
+```bash
+curl -X POST http://localhost:4000/api/recurring-health
+```
+
+QStash will call `POST /api/health` every 10 minutes, and the server logs:
+
+```text
+[timestamp] server is live
+```
+
+To stop it, delete by schedule id:
+
+```bash
+curl -X DELETE http://localhost:4000/api/recurring-health/<scheduleId>
+```
