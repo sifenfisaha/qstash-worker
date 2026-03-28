@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   createRecurringHealthScheduleHandler,
   deleteRecurringHealthScheduleHandler,
-} from "../controller/recurring-health.controller";
+} from "../controller/recurring-health.controller.js";
 
 const router = Router();
 

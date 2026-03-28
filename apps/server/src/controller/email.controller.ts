@@ -21,12 +21,13 @@ export const sendEmailHandler = async (req: Request, res: Response) => {
 
     const { to, subject, text } = req.body;
 
-    console.log("Sending Email!");
-    console.log(to, subject, text);
+    req.blypLog?.info("Sending email", { to, subject });
 
     return res.json({ sucess: true });
   } catch (error) {
-    console.log(error);
+    req.blypLog?.error("Failed to send email", {
+      error: error instanceof Error ? error.message : error,
+    });
     return res.status(500).json({ error: "Failed" });
   }
 };

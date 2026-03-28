@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { qstashClient } from "../lib/qstash";
+import { qstashClient } from "../lib/qstash.js";
 
 export const scheduleHandler = async (req: Request, res: Response) => {
   try {
@@ -40,7 +40,9 @@ export const scheduleHandler = async (req: Request, res: Response) => {
       scheduledFor: meetingTime.toISOString(),
     });
   } catch (error) {
-    console.error(error);
+    req.blypLog?.error("Failed to schedule", {
+      error: error instanceof Error ? error.message : error,
+    });
     return res.status(500).json({ error: "Failed to schedule" });
   }
 };

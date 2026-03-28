@@ -1,7 +1,9 @@
 import type { Request, Response } from "express";
 
-export const heatlthCheck = (_req: Request, res: Response) => {
-  console.log(`[${new Date().toISOString()}] server is live`);
+export const heatlthCheck = (req: Request, res: Response) => {
+  req.blypLog?.info("server is live", {
+    at: new Date().toISOString(),
+  });
 
   res.json({
     status: "ok",

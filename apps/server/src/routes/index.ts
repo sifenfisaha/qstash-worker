@@ -1,8 +1,8 @@
 import { Router } from "express";
-import HealthRoutes from "./health.route";
-import EmailRoutes from "./email.route";
-import ScheduleRoutes from "./schedule.route";
-import RecurringHealthRoutes from "./recurring-health.route";
+import HealthRoutes from "./health.route.js";
+import EmailRoutes from "./email.route.js";
+import ScheduleRoutes from "./schedule.route.js";
+import RecurringHealthRoutes from "./recurring-health.route.js";
 
 const router = Router();
 

@@ -10,5 +10,8 @@
     "typecheck": "pnpm --filter @repo/server typecheck",
     "start": "pnpm --filter @repo/server start",
     "start:server": "pnpm --filter @repo/server start"
+  },
+  "dependencies": {
+    "@blyp/core": "^0.1.21"
   }
 }

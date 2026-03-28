@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
-import { qstashClient } from "../lib/qstash";
+import { qstashClient } from "../lib/qstash.js";
 
 const HEALTH_CRON_EXPRESSION = "*/10 * * * *";
 
 export const createRecurringHealthScheduleHandler = async (
-  _req: Request,
+  req: Request,
   res: Response,
 ) => {
   try {
@@ -29,7 +29,9 @@ export const createRecurringHealthScheduleHandler = async (
       cron: HEALTH_CRON_EXPRESSION,
     });
   } catch (error) {
-    console.error(error);
+    req.blypLog?.error("Failed to create recurring health schedule", {
+      error: error instanceof Error ? error.message : error,
+    });
     return res
       .status(500)
       .json({ error: "Failed to create recurring health schedule" });
@@ -57,7 +59,9 @@ export const deleteRecurringHealthScheduleHandler = async (
       scheduleId,
     });
   } catch (error) {
-    console.error(error);
+    req.blypLog?.error("Failed to delete recurring health schedule", {
+      error: error instanceof Error ? error.message : error,
+    });
     return res
       .status(500)
       .json({ error: "Failed to delete recurring health schedule" });

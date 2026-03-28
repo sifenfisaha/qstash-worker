@@ -1,0 +1,20 @@
+{
+  "pretty": false,
+  "level": "info",
+  "destination": "file",
+  "file": {
+    "enabled": true,
+    "format": "ndjson",
+    "rotation": {
+      "enabled": true,
+      "maxSizeBytes": 10485760,
+      "maxArchives": 5,
+      "compress": true
+    }
+  },
+  "clientLogging": {
+    "enabled": true,
+    "path": "/inngest"
+  },
+  "connectors": {}
+}
