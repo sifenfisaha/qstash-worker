@@ -1,5 +1,5 @@
 {
-  "pretty": false,
+  "pretty": true,
   "level": "info",
   "destination": "file",
   "file": {

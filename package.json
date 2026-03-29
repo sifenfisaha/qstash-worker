@@ -12,6 +12,6 @@
     "start:server": "pnpm --filter @repo/server start"
   },
   "dependencies": {
-    "@blyp/core": "^0.1.21"
+    "@blyp/core": "^0.1.22"
   }
 }

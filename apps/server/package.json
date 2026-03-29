@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@blyp/core": "^0.1.21",
+    "@blyp/core": "^0.1.22",
     "@upstash/qstash": "^2.10.1",
     "cors": "latest",
     "dotenv": "latest",

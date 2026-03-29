@@ -12,7 +12,7 @@ const corsOrigin = process.env.CORS_ORIGIN || "http://localhost:3000";
 
 app.use(cors({ origin: corsOrigin }));
 app.use(express.json());
-app.use(createLogger({ pretty: false }));
+app.use(createLogger());
 
 app.get("/", (req, res) => {
   res.json({ test: "test" });
